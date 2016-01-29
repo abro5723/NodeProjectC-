@@ -20,6 +20,8 @@ public:
 	Type getValue();
 	Node * getPointers();
 	Node(Type value);
+	void setValue(Type value);
+
 };
 
 #endif /* MODEL_NODE_H_ */

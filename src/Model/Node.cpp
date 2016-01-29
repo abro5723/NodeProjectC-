@@ -6,12 +6,10 @@
  */
 
 #include "Node.h"
-#include <>iostream>
+#include <iostream>
 template <class Type>
 Node<Type>::Node()
 {
-	// TODO Auto-generated constructor stub
-	value = 0;
 	pointers = nullptr;
 
 }
@@ -25,12 +23,20 @@ Node<Type>::~Node()
 template <class Type>
 Node<Type>::Node(Type value)
 {
+	this->value=value;
+	pointers = nullptr;
 }
 
 template <class Type>
 Type Node<Type>:: getValue()
 {
 	return this ->value;
+}
+
+template <class Type>
+void Node<Type> :: setValue(Type value)
+{
+	this ->value = value;
 }
 
 template <class Type>
