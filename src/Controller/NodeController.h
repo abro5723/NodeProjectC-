@@ -14,14 +14,17 @@
 #include<string>
 #include "../Model/ArrayNode.cpp"
 #include "../Model/ArrayNode.h"
+#include "../Model/CTECArray.cpp"
 
 using namespace std;
 
 class NodeController
 {
 private:
-	Node<int> myNode;
-	ArrayNode<string> stringArrayNode;
+//	Node<int> myNode;
+//	ArrayNode<string> stringArrayNode;
+	CTECArray<string> * myStringArray;
+	ArrayNode<string>
 public:
 	NodeController();
 	virtual ~NodeController();
