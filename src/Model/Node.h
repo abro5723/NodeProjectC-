@@ -8,6 +8,8 @@
 #ifndef MODEL_NODE_H_
 #define MODEL_NODE_H_
 
+#include <iostream>
+
 template <class Type>
 class Node
 {
@@ -19,8 +21,8 @@ public:
 	virtual ~Node();
 	Type getValue();
 	Node * getPointers();
-	Node(Type value);
-	void setValue(Type value);
+	Node(const Type value);
+	void setValue(const Type value);
 
 };
 

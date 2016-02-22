@@ -9,7 +9,6 @@
 #define MODEL_CTECARRAY_H_
 
 #include "ArrayNode.h"
-#include "ArrayNode.cpp"
 
 template <class Type>
 class CTECArray
@@ -22,7 +21,7 @@ public:
 	virtual ~CTECArray();
 	int getSize();
 	Type get(int position);
-	void set(int position, Type value);
+	void set(int position, const Type& value);
 };
 
 #endif /* MODEL_CTECARRAY_H_ */

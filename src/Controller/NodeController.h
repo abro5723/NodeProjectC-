@@ -9,22 +9,21 @@
 #define CONTROLLER_NODECONTROLLER_H_
 
 #include"../Model/Node.h"
-#include <iostream>
 #include "../Model/Node.cpp"
-#include<string>
+#include "../Model/Timer.h"
 #include "../Model/ArrayNode.cpp"
 #include "../Model/ArrayNode.h"
 #include "../Model/CTECArray.cpp"
+#include<string>
+#include <iostream>
 
 using namespace std;
 
 class NodeController
 {
 private:
-//	Node<int> myNode;
-//	ArrayNode<string> stringArrayNode;
-	CTECArray<string> * myStringArray;
-	ArrayNode<string>
+CTECArray<int> * notHipsterInts;
+Timer arrayTimer;
 public:
 	NodeController();
 	virtual ~NodeController();

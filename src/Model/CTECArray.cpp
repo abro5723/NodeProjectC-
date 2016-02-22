@@ -7,6 +7,7 @@
 
 #include "CTECArray.h"
 #include <iostream>
+#include <assert.h>
 
 using namespace std;
 
@@ -14,7 +15,9 @@ template <class Type>
 CTECArray<Type>::CTECArray(int size)
 {
 	this->size = size;
-	head = nullptr;
+	this->head = nullptr;
+
+	assert(size > 0);
 
 	if(size <= 0)
 	{
@@ -26,14 +29,17 @@ CTECArray<Type>::CTECArray(int size)
 	{
 		if(head != nullptr)
 		{
-			ArrayNode<Type>
+			ArrayNode<Type> * nextNode = new ArrayNode<Type>;
+			nextNode->setNext(head);
+			head = nextNode;
+
 		}
 		else
 		{
-
+			ArrayNode<Type> * first = new ArrayNode<Type>();
+			head = first;
 		}
 	}
-	delete head;
 }
 
 template <class Type>
@@ -42,14 +48,14 @@ CTECArray<Type>::~CTECArray()
 	ArrayNode<Type> * deleteMe = head;
 	for(int index = 0; index < size; index++)
 	{
-		if(deleteMe->getNex() != nullptr)
+		if(deleteMe->getNext() != nullptr)
 		{
 			head = deleteMe->getNext();
-			deleteMe->sNext(nullptr);
+			deleteMe->setNext(nullptr);
+
+		}
 			delete deleteMe->getNext();
 			deleteMe = head;
-		}
-
 	}
 }
 
@@ -62,13 +68,10 @@ int CTECArray<Type> :: getSize()
 template <class Type>
 Type CTECArray<Type> :: get(int position)
 {
-	if(position >= size || position < 0)
-	{
-		return nullptr;
-	}
-	else
-	{
+		assert(position < size && position >= 0);
+
 		ArrayNode<Type> * current = head;
+
 		for(int spot = 0; spot <= position; spot++)
 		{
 			if(spot !=position)
@@ -77,22 +80,26 @@ Type CTECArray<Type> :: get(int position)
 			}
 			else
 			{
-				current->setValue();
+				return current->getValue();
 			}
 		}
-	}
 }
 
 template <class Type>
-void CTECArray<Type>:: set(int position, Type value)
+void CTECArray<Type>:: set(int position, const Type& value)
 {
-	if(position <= size|| position <0)
-	{
-		cerr << "Don't do this!" << endl;
-	}
-	else
-	{
-
-	}
+	assert(position <size && position >=0);
+	ArrayNode<Type> * current = head;
+		for(int spot = 0; spot <= position; spot)
+		{
+			if(position != spot)
+			{
+				current = current->getNext();
+			}
+			else
+			{
+				current->setValue(value);
+			}
+		}
 
 }
