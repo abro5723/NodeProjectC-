@@ -23,3 +23,17 @@ CtecList<Type>::~CtecList()
 	// TODO Auto-generated destructor stub
 }
 
+template <class Type>
+Type CtecList<Type> :: removeFromFront()
+{
+	ArrayNode<Type> * newHead = new ArrayNode<Type>();
+	newHead = head->getNext();
+	delete this -> head;
+	this->head = newHead;
+}
+
+template <class Type>
+Type CtecList<Type> :: removeFromEnd()
+{
+
+}
