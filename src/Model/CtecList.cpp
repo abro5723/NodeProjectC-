@@ -26,10 +26,20 @@ CtecList<Type>::~CtecList()
 template <class Type>
 Type CtecList<Type> :: removeFromFront()
 {
+	//Inase we require that which we remove
+	Type returnValue;
+
+	assert(size > 0);
+	//Find the next spot
 	ArrayNode<Type> * newHead = new ArrayNode<Type>();
 	newHead = head->getNext();
+	//Get what was  the head node!
+	returnValue = head->getValue();
+	//Remove head
 	delete this -> head;
 	this->head = newHead;
+
+	return returnValue;
 }
 
 template <class Type>
