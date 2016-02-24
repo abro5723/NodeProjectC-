@@ -29,7 +29,7 @@ CTECArray<Type>::CTECArray(int size)
 	{
 		if(head != nullptr)
 		{
-			ArrayNode<Type> * nextNode = new ArrayNode<Type>;
+			ArrayNode<Type> * nextNode = new ArrayNode<Type>();
 			nextNode->setNext(head);
 			head = nextNode;
 
@@ -57,6 +57,7 @@ CTECArray<Type>::~CTECArray()
 			delete deleteMe->getNext();
 			deleteMe = head;
 	}
+	delete head;
 }
 
 template <class Type>
