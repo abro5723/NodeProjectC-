@@ -20,13 +20,14 @@ CtecList<Type>::CtecList()
 template <class Type>
 CtecList<Type>::~CtecList()
 {
-	// TODO Auto-generated destructor stub
+
+
 }
 
 template <class Type>
 Type CtecList<Type> :: removeFromFront()
 {
-	//Inase we require that which we remove
+	//Incase we require that which we remove
 	Type returnValue;
 
 	assert(this->size > 0);
