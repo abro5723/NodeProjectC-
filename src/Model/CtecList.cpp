@@ -190,7 +190,9 @@ void CtecList<Type> :: addAtIndex(int index, Type value)
 template <class Type>
 Type CtecList<Type> :: getFront()
 {
-
+	Type returnValue;
+	Type thingToGet;
+	thingToGet = returnValue = head->getValue();
 }
 
 template <class Type>
