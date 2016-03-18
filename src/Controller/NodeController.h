@@ -14,16 +14,19 @@
 #include "../Model/ArrayNode.cpp"
 #include "../Model/ArrayNode.h"
 #include "../Model/CTECArray.cpp"
+#include "../Model/CtecList.cpp"
 #include<string>
 #include <iostream>
 
-using namespace std;
 
 class NodeController
 {
 private:
 CTECArray<int> * notHipsterInts;
 Timer arrayTimer;
+CtecList<int> * numbers;
+void testLists();
+
 public:
 	NodeController();
 	virtual ~NodeController();

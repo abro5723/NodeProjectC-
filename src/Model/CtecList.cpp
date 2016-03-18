@@ -99,7 +99,7 @@ void CtecList<Type> :: calculatedSize()
 		count++;
 		while(counterPointer->getNext() != nullptr)
 		{
-			counterPointer = counterPointer->etNext();
+			counterPointer = counterPointer->getNext();
 			count++;
 
 		}
@@ -144,42 +144,20 @@ Type CtecList<Type> :: removeFromEnd()
 template <class Type>
 void CtecList<Type> :: addToEnd(Type value)
 {
-	ArrayNode<Type> * newNode;
+	ArrayNode<Type> * newStuff = new ArrayNode<Type>(value);
+	end->setNext(newStuff);
+	end = newStuff;
 
-	newNode = new ArrayNode<Type>;
-	newNode->value = value;
-	newNode->getNext() = NULL;
-	if(head == NULL)
-	{
-		head = newNode;
-		end=newNode;
-		this->calculatedSize();
-	}
-	else
-	{
-		end->getNext() = newNode;
-		end = newNode;
+	calculatedSize();
 
-		this->calculatedSize();
-	}
 
 }
 
 template <class Type>
-void CtecList<Type> :: addToFront(Type value)
+void CtecList<Type> :: addToFront(const Type& value)
 {
-	ArrayNode<Type> * newNode;
-
-	newNode = new CtecList<Type>;
-	newNode->getNext() = head;
-	head = newNode;
-	this->calculatedSize();
-
-	if(end == NULL)
-	{
-		end = newNode;
-	}
-
+	ArrayNode<Type> * newStuff = new ArrayNode<Type>(value, head);
+	head = newStuff;
 }
 
 template <class Type>
